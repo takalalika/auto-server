@@ -17,6 +17,11 @@
    #### 2.创建一个 Docker network
     docker network create nginx-proxy
    #### 3.到对应目录启动 nginx-proxy
+    cd auto-server\use_ssl\nginx-proxy
+    or
+    cd auto-server\normal\nginx
+
+    docker-compose up -d 
    #### 4.修改并启动需要启动的服务的docker-compose中的参数
     如bitwarden下的
       - VIRTUAL_HOST=example.test.com
@@ -25,8 +30,8 @@
     将对应的域名和邮箱修改,不使用ssl的情况下 只需要修改VIRTUAL_HOST
     
 ## 参照
- http://einverne.github.io/post/2017/02/docker-nginx-host-multiple-websites.html
+ -（+*）http://einverne.github.io/post/2017/02/docker-nginx-host-multiple-websites.html
  看见这篇文章开始折腾的
- https://blog.csdn.net/jiangyu1013/article/details/80881097
+ -（+*）https://blog.csdn.net/jiangyu1013/article/details/80881097
  nginx-proxy 是使用的docker的数据卷没有自定义挂载，需要操作数据卷的朋友可以参照这篇
 
