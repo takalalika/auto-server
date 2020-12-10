@@ -12,12 +12,12 @@
    如果只是使用可以直接运行
 
 ## 使用步骤
-   1.下载docker 和 docker-compose 并启动
+   ####1.下载docker 和 docker-compose 并启动
       具体参照[docker手册](https:://yeasy.gitbook.io/docker_practice/install "Markdown")。
-   2.创建一个 Docker network
+   ####2.创建一个 Docker network
     docker network create nginx-proxy
-   3.到对应目录启动 nginx-proxy
-   4.修改并启动需要启动的服务的docker-compose中的参数
+   ####3.到对应目录启动 nginx-proxy
+   ####4.修改并启动需要启动的服务的docker-compose中的参数
     如bitwarden下的
       - VIRTUAL_HOST=example.test.com
       - LETSENCRYPT_HOST=example.test.com
