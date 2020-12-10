@@ -13,7 +13,7 @@
 
 ## 使用步骤
    #### 1.下载docker 和 docker-compose 并启动
-      具体参照[docker手册](https:://yeasy.gitbook.io/docker_practice/install "Markdown")。
+具体参照: [docker手册](https:://yeasy.gitbook.io/docker_practice/install "Markdown")。
    #### 2.创建一个 Docker network
     docker network create nginx-proxy
    #### 3.到对应目录启动 nginx-proxy
