@@ -1,0 +1,14 @@
+version: "3.6"
+services:
+  bitwarden:
+    environment:
+      - VIRTUAL_HOST=example.test.com
+    image: bitwardenrs/server:1.16.3
+    restart: unless-stopped
+    volumes:
+        - ./bw_data:/data
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
