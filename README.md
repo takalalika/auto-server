@@ -1,5 +1,5 @@
 # auto-server
-  docker-compose 使用 nginx-proxy 在一台小鸡下部署多个项目 支持ssl。
+  docker-compose 使用 nginx-proxy 在一台小鸡下部署多个项目 使用域名区分 支持ssl。
   此项目的目的是为了自用时候方便,顺便做记录,*不保证所有参数都调优且高可用*。
 
 ## 目录
@@ -8,8 +8,9 @@
    tool: 一些工具类的软件,直接使用ip访问或者直接使用docker跑的东西
 
 ## 核心
-   use_ssl/nginx-proxy 或者 normal/nginx-proxy 目录下的docker-compose，好奇可以自行google image后面的内容
-   如果只是使用可以直接运行
+jwilder/nginx-proxy 负责通过你填写的域名自动生成nginx的配置文件，不需要关心细节，只需要运行起来就可以
+jrcs/letsencrypt-nginx-proxy-companion 负责通过letsencrypt生成免费https证书并且自动重新认证
+不套用cf的情况下理论上是可以一次搭建永久有效。套用cf也可以,不过过了60天后会不会自动重新认证https我还没有测试
 
 ## 使用步骤
    #### 1.下载docker 和 docker-compose 并启动
@@ -36,6 +37,7 @@
 ## 问题排查和一些基本操作
 当发现启动项目后运行不正常，先使用docker ps -a
 查询到对应docker容器的id 再使用 docker logs -f 容器id的方式可以查询到该容器的启动日志。多数情况下是jrcs/letsencrypt-nginx-proxy-companion没有签发成功，详细情况可以添加issue。或者直接使用normal方式
+nginx-proxy中的数据是通过 docker volume管理的,某些情况下你可能会想将他删除重新生成 先使用docker-compose down  再使用 docker volume prune 清理
 
 ## 已经支持的项目
 	bitwarden
@@ -51,6 +53,8 @@
 ## 参照
  #### http://einverne.github.io/post/2017/02/docker-nginx-host-multiple-websites.html
  看见这篇文章开始折腾的
- ####  https://blog.csdn.net/jiangyu1013/article/details/80881097
+ ####  https://yeasy.gitbook.io/docker_practice/data_management/volume
  nginx-proxy 是使用的docker的数据卷没有自定义挂载，需要操作数据卷的朋友可以参照这篇
 
+## 或许你有兴趣看我的博客
+ #### https://blog.hideo.site
