@@ -1,0 +1,19 @@
+version: "2.1"
+services:
+  syncthing:
+    image: ghcr.io/linuxserver/syncthing
+    container_name: syncthing
+    hostname: syncthing    #optional 一般用ip访问就可以
+    environment:
+      - PUID=0                      # 用户/用户组id  0为root，这个地方如果用新建用户 记得给授权 要不运行起来没有权限操作文件
+      - PGID=0                      # 用户/用户组id  0为root，这个地方如果用新建用户 记得给授权 要不运行起来没有权限操作文件
+      - TZ=Europe/London
+    volumes:
+      - ./path/to/appdata/config:/config   # 操作的文件地址，需要共享出去 或者下载过来的文件存放地址
+      - ./path/to/data1:/data1
+      - ./path/to/data2:/data2
+    ports:
+      - 8384:8384
+      - 22000:22000
+      - 21027:21027/udp
+    restart: unless-stopped

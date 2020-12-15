@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  resilio_sync:
+    image: resilio/sync
+    restart: always
+    ports:
+     - 9999:8888
+     - 55555:55555/tcp
+     - 55555:55555/udp
+    volumes:
+     - ./sync_storage:/mnt/sync/storage     # Sync storage folder
+     - ./sync.conf:/mnt/sync/sync.conf    # Configuration file
+     - /root/auto-server/use_ssl/file_server/app/files/syn:/mnt/sync/data          # folder with data to be shared

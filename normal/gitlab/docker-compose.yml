@@ -1,0 +1,17 @@
+version: '3'
+services:
+    gitlab:
+      image: 'gitlab/gitlab-ce'
+      restart: unless-stopped
+      hostname: 'git.motoko.site'  #记得修改这里
+      container_name: gitlab
+      environment:
+        VIRTUAL_HOST: example.test.com
+        TZ: 'Asia/Shanghai'
+        GITLAB_OMNIBUS_CONFIG: |
+          external_url 'http://example.test.com'    #记得修改这里
+          gitlab_rails['time_zone'] = 'Asia/Shanghai'
+      volumes:
+        - /srv/gitlab/config:/etc/gitlab 
+        - /srv/gitlab/logs:/var/log/gitlab
+        - /srv/gitlab/data:/var/opt/gitlab

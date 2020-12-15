@@ -1,0 +1,1 @@
+docker run --restart=always -e PASSWORD=1uyzxqwer@321 -e METHOD=aes-256-gcm -p 1888:8388 -p 1888:8388/udp -d shadowsocks/shadowsocks-libev
