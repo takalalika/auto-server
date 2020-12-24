@@ -10,7 +10,9 @@
 
 ## Ä¿Â¼
    use_ssl£ºÖ§³Ödocker-composeÒ»¼ü´î½¨²¢Ê¹ÓÃssl
+
    normal£ºÒ»Ð©ÈË²»Ï²»¶https»òÕßÈç¹ûÌ×ÓÃcfÔÙÓÃ Let¡¯s Encrypt Éú³ÉÖ¤Êé»á³öÎÊÌâ¡£ÕâÁ½ÖÖÇé¿öÓÃÕâ¸öÄ¿Â¼ÏÂµÄ
+
    tool: Ò»Ð©¹¤¾ßÀàµÄÈí¼þ,Ö±½ÓÊ¹ÓÃip·ÃÎÊ»òÕßÖ±½ÓÊ¹ÓÃdockerÅÜµÄ¶«Î÷
 
    data: ËùÓÐÄ¿Â¼µÄÊý¾Ý¼¯ÖÐµ½ÕâÀï¹ÜÀí£¬·½±ãÊý¾Ý±¸·Ý/×ªÒÆ
@@ -39,8 +41,12 @@ jrcs/letsencrypt-nginx-proxy-companion ¸ºÔðÍ¨¹ýletsencryptÉú³ÉÃâ·ÑhttpsÖ¤Êé²¢ÇÒ×
     Ò»Ð©ÌØÊâµÄÈí¼þ¿ÉÄÜÐèÒª¶îÍâÅäÖÃ£¬ÇëÁôÒâÎÄ¼þÖÐµÄ×¢ÊÍ
 
 ## ÒÑÖªµÄÎÊÌâ
-ÔÚÌ×ÓÃcloudflare²¢ÇÒhttpsÆôÓÃÑÏ¸ñµÄÇé¿öÏÂ,ÔÙÊ¹ÓÃuse_sslÖÐµÄ·½·¨ÔËÐÐ¿ÉÄÜ³öÏÖssl¼ìÑé²»¹ýµÄÇé¿ö,Êµ²â¿ÉÒÔÏÈÊ¹ÓÃÁé»îÄ£Ê½£¬ÔÙÔËÐÐdocker-compose¡£
+1.ÔÚÌ×ÓÃcloudflare²¢ÇÒhttpsÆôÓÃÑÏ¸ñµÄÇé¿öÏÂ,ÔÙÊ¹ÓÃuse_sslÖÐµÄ·½·¨ÔËÐÐ¿ÉÄÜ³öÏÖssl¼ìÑé²»¹ýµÄÇé¿ö,Êµ²â¿ÉÒÔÏÈÊ¹ÓÃÁé»îÄ£Ê½£¬ÔÙÔËÐÐdocker-compose¡£
 ÔÙ¸Ä³ÉÑÏ¸ñÄ£Ê½/Ö±½ÓÊ¹ÓÃnormal·½Ê½Æô¶¯cfÉèÖÃ³ÉÁé»îÄ£Ê½/cloudflareÊ¹ÓÃÑÏ¸ñÄ£Ê½²¢ÇÒdnsÖÐÅäÖÃ×ã¹»¾ÃµÄÇé¿öÏÂÈÔÈ»¿ÉÒÔÖ±½ÓÊ¹ÓÃuse_sslÆô¶¯£¬ÕâÒ²ÊÇÎªÊ²Ã´Ò»¿ªÊ¼ÎÒÃ»ÓÐ·¢ÏÖÕâ¸öÎÊÌâµÄÔ­Òò¡£
+
+2.file_server Æô¶¯ºó·ÃÎÊÈç¹ûÌáÊ¾Ã»ÓÐÈ¨ÏÞ ÐèÒªchmod 777 ¸ø appÎÄ¼þ¼ÐÊÚÈ¨
+
+3.wordpress Èç¹ûÊ¹ÓÃµÚÈý·½°²×°°üµÄ·½Ê½°²×°Ö÷Ìâ£¬dockerÖØÆô(»òÕßÖ÷»ú±»ÆÈÖØÆô)ºó·ÃÎÊ»á²»Õý³££¬ÒòÎªµÚÈý·½°²×°µÄÊý¾Ý²¢Ã»ÓÐ´æ´¢µ½¹ÒÔØµÄÄ¿Â¼Àï£¬Ä¿Ç°µÄ½â¾ö·½°¸ÊÇµÇÂ¼ºóÌ¨¹ÜÀíÖØÐÂ°²×°Ò»±é
 
 ## ÎÊÌâÅÅ²éºÍÒ»Ð©»ù±¾²Ù×÷
 µ±·¢ÏÖÆô¶¯ÏîÄ¿ºóÔËÐÐ²»Õý³££¬ÏÈÊ¹ÓÃdocker ps -a
