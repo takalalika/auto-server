@@ -4,8 +4,8 @@ services:
     image: ghcr.io/linuxserver/transmission
     container_name: transmission
     environment:
-      - PUID=1000         # 用户/用户组id  0为root，这个地方如果用新建用户 记得给授权 要不运行起来没有权限操作文件
-      - PGID=1000         # 用户/用户组id  0为root，这个地方如果用新建用户 记得给授权 要不运行起来没有权限操作文件
+      - PUID=1000        
+      - PGID=1000         
       - TZ=Europe/London
       - TRANSMISSION_WEB_HOME=/combustion-release/ #optional
       - USER=username #optional

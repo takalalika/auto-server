@@ -2,10 +2,18 @@
   docker-compose Ê¹ÓÃ nginx-proxy ÔÚÒ»Ì¨Ð¡¼¦ÏÂ²¿Êð¶à¸öÏîÄ¿ Ê¹ÓÃÓòÃûÇø·Ö Ö§³Össl¡£
   ´ËÏîÄ¿µÄÄ¿µÄÊÇÎªÁË×ÔÓÃÊ±ºò·½±ã,Ë³±ã×ö¼ÇÂ¼,*²»±£Ö¤ËùÓÐ²ÎÊý¶¼µ÷ÓÅÇÒ¸ß¿ÉÓÃ*¡£
 
+ ²¹³ä£º
+
+  ±¾ÏîÄ¿µÄ³õÖÔÊÇÎªÁË¸ø×Ô¼ºÕÛÌÚÁôÏÂ¼ÇÂ¼£¬ËùÒÔ´ËÏîÄ¿Ö®ºó·½Ïò¿ÉÄÜ»á×ª±ä²»½ö½öÊÇÊ¹ÓÃdocker´î½¨
+
+  ÏîÄ¿Èç´Ë¼òµ¥:Òò´Ë»áÖð½¥Ôö¼Ó¸÷ÖÖ¶ÔÊý¾ÝµÄ¹ÜÀí¡¢Ê¹ÓÃgolangÊµÏÖÒ»¼ü½Å±¾(Ãæ°å)µÈ¹¦ÄÜ
+
 ## Ä¿Â¼
    use_ssl£ºÖ§³Ödocker-composeÒ»¼ü´î½¨²¢Ê¹ÓÃssl
    normal£ºÒ»Ð©ÈË²»Ï²»¶https»òÕßÈç¹ûÌ×ÓÃcfÔÙÓÃ Let¡¯s Encrypt Éú³ÉÖ¤Êé»á³öÎÊÌâ¡£ÕâÁ½ÖÖÇé¿öÓÃÕâ¸öÄ¿Â¼ÏÂµÄ
    tool: Ò»Ð©¹¤¾ßÀàµÄÈí¼þ,Ö±½ÓÊ¹ÓÃip·ÃÎÊ»òÕßÖ±½ÓÊ¹ÓÃdockerÅÜµÄ¶«Î÷
+
+   data: ËùÓÐÄ¿Â¼µÄÊý¾Ý¼¯ÖÐµ½ÕâÀï¹ÜÀí£¬·½±ãÊý¾Ý±¸·Ý/×ªÒÆ
 
 ## ºËÐÄ
 jwilder/nginx-proxy ¸ºÔðÍ¨¹ýÄãÌîÐ´µÄÓòÃû×Ô¶¯Éú³ÉnginxµÄÅäÖÃÎÄ¼þ£¬²»ÐèÒª¹ØÐÄÏ¸½Ú£¬Ö»ÐèÒªÔËÐÐÆðÀ´¾Í¿ÉÒÔ
@@ -28,7 +36,7 @@ jrcs/letsencrypt-nginx-proxy-companion ¸ºÔðÍ¨¹ýletsencryptÉú³ÉÃâ·ÑhttpsÖ¤Êé²¢ÇÒ×
       - LETSENCRYPT_HOST=example.test.com
       - DEFAULT_EMAIL=xxx@gmail.com
     ½«¶ÔÓ¦µÄÓòÃûºÍÓÊÏäÐÞ¸Ä,²»Ê¹ÓÃsslµÄÇé¿öÏÂ Ö»ÐèÒªÐÞ¸ÄVIRTUAL_HOST
-	Ò»Ð©ÌØÊâµÄÈí¼þ¿ÉÄÜÐèÒª¶îÍâÅäÖÃ£¬ÇëÁôÒâÎÄ¼þÖÐµÄ×¢ÊÍ
+    Ò»Ð©ÌØÊâµÄÈí¼þ¿ÉÄÜÐèÒª¶îÍâÅäÖÃ£¬ÇëÁôÒâÎÄ¼þÖÐµÄ×¢ÊÍ
 
 ## ÒÑÖªµÄÎÊÌâ
 ÔÚÌ×ÓÃcloudflare²¢ÇÒhttpsÆôÓÃÑÏ¸ñµÄÇé¿öÏÂ,ÔÙÊ¹ÓÃuse_sslÖÐµÄ·½·¨ÔËÐÐ¿ÉÄÜ³öÏÖssl¼ìÑé²»¹ýµÄÇé¿ö,Êµ²â¿ÉÒÔÏÈÊ¹ÓÃÁé»îÄ£Ê½£¬ÔÙÔËÐÐdocker-compose¡£

@@ -8,7 +8,7 @@ services:
     image: bitwardenrs/server:1.16.3
     restart: unless-stopped
     volumes:
-        - ./bw_data:/data
+        - /root/auto-server/data/config/back_files/bw_data:/data
 
 networks:
   default:
